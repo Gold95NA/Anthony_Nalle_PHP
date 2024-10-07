@@ -7,4 +7,4 @@ $animals = [
     'Sloth'
 ];
 
-require 'index2.view.php';
+require 'animals.view.php';
