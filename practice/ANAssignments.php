@@ -66,5 +66,8 @@
 
         <h3>Week 2</h3>
         <ul>
-            <li><a href="http://localhost:81/practice/ANAssignments.php" target="_blank">My Website</a></li>
+            <li><a href="http://localhost:81/practice/ANAssignments.php" target="_blank">Task A: My Website</a></li>
+        </ul>
+        <ul>
+            <li><a href="http://localhost:81/practice/intake.php" target="_blank">Task B: Patient Intake</a></li>
         </ul>
