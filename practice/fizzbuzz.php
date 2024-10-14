@@ -1,6 +1,6 @@
 <?php
 
-// function to determine the fizz buzz result
+//function to determine the fizz buzz result
 
 function fizzBuzz($number) 
 {
