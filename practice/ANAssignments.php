@@ -8,9 +8,9 @@
 <body>
     <header>
 
-        <h1>Anthony's Assignment's</h1>
+        <h1>Anthony's Assignments</h1>
 
-        <p>Welcome to my course assignment solution page. Here you'll find links to my labs, useful resources, and a bit about myself.</p>
+        <p>Welcome to my course assignment page. Here you'll find links to my labs, useful resources, and a bit about myself.</p>
 
     </header>
 
@@ -87,4 +87,3 @@
         <h3>Week 9</h3>
 
         <h3>Week 10</h3>
-        
