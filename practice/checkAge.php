@@ -34,4 +34,3 @@ else
     echo 'is not old enough for entry. ';
 }
 
-require 'checkAge.view.php';

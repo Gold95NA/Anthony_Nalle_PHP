@@ -15,7 +15,7 @@
     </header>
 
     <section>
-        <h2>About Me</h2>
+        <h2>My Repo</h2>
         <p><strong>Name:</strong> Anthony</p>
         <p><strong>GitHub Repository:</strong> <a href="https://github.com/Gold95NA" target="_blank">My GitHub</a></p>
     </section>
@@ -38,6 +38,33 @@
 
         <h3>Things I Enjoy</h3>
         <ul>
-            <li><a href="https://www.goodreads.com/" target="_blank">Goodreads (Reading)</a></li>
-            <li><a href="https://www.netflix.com/" target="_blank">Netflix (Watching Movies)</a></li>
-            <li><a href="https://www.spotify.com/" target="_blank">Spotify (Music)</a></
+            <li><a href="https://store.steampowered.com/" target="_blank">Steam (PC Gaming) </a></li>
+            <li><a href="https://www.crunchyroll.com/" target="_blank">Crunchyroll (Watching Anime)</a></li>
+            <li><a href="https://www.youtube.com/" target="_blank">Youtube (Watching Vidoes/Music) </a>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Assignments</h2>
+        <h3>Week 1</h3>
+        <ul>
+            <li><a href="http://localhost:81/practice/animals.php" target="_blank">Mini-Task C: Basic PHP and Arrays</a></li>
+        </ul>
+        <ul>
+            <li><a href="http://localhost:81/practice/associative.php" target="_blank">Mini Task D: Associative Arrays</a></li>
+        </ul>
+        <ul>
+            <li><a href="http://localhost:81/practice/checkbox.php" target="_blank">Mini Task E: Booleans and Conditionals</a></li>
+        </ul>
+        <ul>
+            <li><a href="http://localhost:81/practice/checkAge.php" target="_blank">Mini Task F: Check Age</a></li>
+        </ul>
+        <ul>
+            <li><a href="http://localhost:81/practice/fizzbuzz.php" target="_blank">Mini Task G: Fizz Buzz</a></li>
+        </ul>
+
+
+        <h3>Week 2</h3>
+        <ul>
+            <li><a href="http://localhost:81/practice/ANAssignments.php" target="_blank">My Website</a></li>
+        </ul>
