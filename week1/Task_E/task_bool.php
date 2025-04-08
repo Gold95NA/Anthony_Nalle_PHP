@@ -2,13 +2,29 @@
 
 $task = [
 
-    'Title: ' => 'PHP Homework',
+    'title' => 'Javascript Homework',
 
-    'Assigned to: ' => 'Anthony Nalle',
+    'assigned to' => 'Anthony Nalle',
 
-    'Due: ' => 'Tomorrow',
+    'due' => 'Today',
 
-    'Completed: ' => '❌'
+    'completed' => true,
+
+    'graded' => true
+
+];
+
+$task2 = [
+
+    'title' => 'PHP Homework',
+
+    'assigned to' => 'Anthony Nalle',
+
+    'due' => 'Tomorrow',
+
+    'completed' => false,
+
+    'graded' => false
 
 ];
 
