@@ -54,6 +54,24 @@
 
         }
 
+        a {
+
+            color: white;
+
+        }
+
+        a:visited {
+
+            color: rgb(16, 150, 34);
+
+        }
+
+        a:hover {
+
+            color:rgb(75, 26, 153);
+
+        }
+
     </style>
 
 </head>
@@ -62,17 +80,17 @@
     
     <h1>Anthony Nalle PHP 266.06</h1>
 
-    <a class= "repo-link"><href>My Git Repo</href></a>
+     <a class= "repo-link" href="https://github.com/Gold95NA/Anthony_Nalle_PHP">My Git PHP Repo</a> 
     
     <h2>PHP Resources</h2>
 
     <ul>
 
-        <li></li>
+        <li><a class= "resource" href="https://www.mongodb.com/developer/languages/php/">MongoDB PHP Guides/Tutorials</a></li>
 
-        <li></li>
+        <li><a class= "resource" href="https://www.w3schools.com/php/">W3 Schools PHP Tutorials</a></li>
 
-        <li></li>
+        <li><a class= "resource" href="https://www.learn-php.org/">Learn PHP Interactive Tutorial</a></li>
 
     </ul>
 
@@ -80,33 +98,37 @@
 
     <ul>
 
-        <li></li>
+        <li><a class= "resource" href="https://docs.github.com/en/get-started/start-your-journey/git-and-github-learning-resources">GitHub Getting Started Guide</a></li>
 
-        <li></li>
+        <li><a class= "resource" href="https://skills.github.com/">GitHub Skills Interactive Courses</a></li>
 
-        <li></li>
+        <li><a class= "resource" href="https://resources.github.com/learn/pathways/">GitHub Learning Pathways</a></li>
 
     </ul>
 
     <h2>Assignments</h2>
 
     <ul>
+
+        <li><a class= "folder" href="/Anthony_Nalle_PHP/week1">Week 1</a></li>
+
+        <li><a class= "folder" href="/Anthony_Nalle_PHP/week2">Week 2</a></li>
         
-        <li>Week 3</li>
+        <li><a class= "folder" href="/Anthony_Nalle_PHP/week3">Week 3</a></li>
 
-        <li>Week 4</li>
+        <li><a class= "folder" href="/Anthony_Nalle_PHP/week4">Week 4</a></li>
 
-        <li>Week 5</li>
+        <li><a class= "folder" href="/Anthony_Nalle_PHP/week5">Week 5</a></li>
 
-        <li>Week 6</li>
+        <li><a class= "folder" href="/Anthony_Nalle_PHP/week6">Week 6</a></li>
 
-        <li>Week 7</li>
+        <li><a class= "folder" href="/Anthony_Nalle_PHP/week7">Week 7</a></li>
 
-        <li>Week 8</li>
+        <li><a class= "folder" href="/Anthony_Nalle_PHP/week8">Week 8</a></li>
 
-        <li>Week 9</li>
+        <li><a class= "folder" href="/Anthony_Nalle_PHP/week9">Week 9</a></li>
 
-        <li>Week 10</li>
+        <li><a class= "folder" href="/Anthony_Nalle_PHP/week10">Week 10</a></li>
 
     </ul>
 
@@ -114,17 +136,17 @@
 
     <ul>
 
-        <li></li>
+        <li><a class= "resource" href="https://store.steampowered.com/">Video Games - Steam Store</a></li>
 
-        <li></li>
+        <li><a class= "resource" href="http://villaris-ri.com/">Martial Arts - Villari's Middletown RI</a></li>
 
-        <li></li>
+        <li><a class= "resource" href="https://www.blender.org/">Digital Art/3D Animation - Blender</a></li>
 
     </ul>
 
     <footer>
 
-        <h3>Edited: XX/XX/XXXX at: XX:XXxm</h3>
+        <h3>Edited: 04/15/2025 at: 9:30am</h3>
 
     </footer>
 
