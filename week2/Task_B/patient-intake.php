@@ -127,9 +127,17 @@ if ($submitted && empty($errors)) {
 
             display: flex;
 
-            flex-direction: column;
+            justify-content: center;
+
+        }
+
+        .form {
+
+            display: flex;
 
             justify-content: center;
+
+            flex-direction: column;
 
         }
 
@@ -141,13 +149,13 @@ if ($submitted && empty($errors)) {
 
         p {
 
-            margin-left: 550px;
-
             padding-bottom: 40px;
 
         }
             
         }</style>";
+
+    echo "<div class='form'>";
 
     echo "<h1>Patient Information</h1>";
 
@@ -162,6 +170,8 @@ if ($submitted && empty($errors)) {
     echo "<p><strong>Weight:</strong> {$data['weight']} lbs</p>";
     
     echo "<p><strong>BMI:</strong> $bmiRounded ($bmiDesc)</p>";
+
+    echo "</div>";
     
     exit;
 

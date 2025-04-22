@@ -45,14 +45,21 @@
 
         label {
 
-            margin-left: 550px;
+            
+        }
+
+        .form {
+
+            display: flex;
+
+            justify-content: center;
+
         }
 
         .sub-btn {
 
-            width: 100px;
-
-            margin-left: 650px;
+            width: 100px; 
+            margin-left: 80px;         
 
         }
 
@@ -84,81 +91,85 @@
 
     <h1>Patient Intake Form</h1>
 
-    <form method="post">
+    <div class=form>
 
-        <label>First Name:
+        <form method="post">
 
-            <input type="text" name="first_name" value="<?= htmlspecialchars($data['first_name']) ?>">
+            <label>First Name:
 
-            <span style="color:red"><?= $errors['first_name'] ?? '' ?></span>
+                <input type="text" name="first_name" value="<?= htmlspecialchars($data['first_name']) ?>">
 
-        </label>
-        
-        <br><br>
+                <span style="color:red"><?= $errors['first_name'] ?? '' ?></span>
 
-        <label>Last Name:
-
-            <input type="text" name="last_name" value="<?= htmlspecialchars($data['last_name']) ?>">
-
-            <span style="color:red"><?= $errors['last_name'] ?? '' ?></span>
+            </label>
             
-        </label>
-        
-        <br><br>
+            <br><br>
 
-        <label>Married:
+            <label>Last Name:
 
-            <select class="marriage-check" name="married">
+                <input type="text" name="last_name" value="<?= htmlspecialchars($data['last_name']) ?>">
 
-                <option value="">--Select--</option>
+                <span style="color:red"><?= $errors['last_name'] ?? '' ?></span>
+                
+            </label>
+            
+            <br><br>
 
-                <option value="yes" <?= $data['married'] == 'yes' ? 'selected' : '' ?>>Yes</option>
+            <label>Married:
 
-                <option value="no" <?= $data['married'] == 'no' ? 'selected' : '' ?>>No</option>
+                <select class="marriage-check" name="married">
 
-            </select>
+                    <option value="">--Select--</option>
 
-            <span style="color:red"><?= $errors['married'] ?? '' ?></span>
+                    <option value="yes" <?= $data['married'] == 'yes' ? 'selected' : '' ?>>Yes</option>
 
-        </label>
-        
-        <br><br>
+                    <option value="no" <?= $data['married'] == 'no' ? 'selected' : '' ?>>No</option>
 
-        <label>Birth Date:
+                </select>
 
-            <input class="bday-check" type="date" name="birth_date" value="<?= htmlspecialchars($data['birth_date']) ?>">
+                <span style="color:red"><?= $errors['married'] ?? '' ?></span>
 
-            <span style="color:red"><?= $errors['birth_date'] ?? '' ?></span>
+            </label>
+            
+            <br><br>
 
-        </label>
-        
-        <br><br>
+            <label>Birth Date:
 
-        <label>Height:
+                <input class="bday-check" type="date" name="birth_date" value="<?= htmlspecialchars($data['birth_date']) ?>">
 
-            <input class="height-input" type="number" name="height_ft" placeholder="ft" min="1" max="8" value="<?= htmlspecialchars($data['height_ft']) ?>"> ft
+                <span style="color:red"><?= $errors['birth_date'] ?? '' ?></span>
 
-            <input type="number" name="height_in" placeholder="in" min="0" max="11" value="<?= htmlspecialchars($data['height_in']) ?>"> in
+            </label>
+            
+            <br><br>
 
-            <span style="color:red"><?= $errors['height_ft'] ?? '' ?> <?= $errors['height_in'] ?? '' ?></span>
+            <label>Height:
 
-        </label>
-        
-        <br><br>
+                <input class="height-input" type="number" name="height_ft" placeholder="ft" min="1" max="8" value="<?= htmlspecialchars($data['height_ft']) ?>"> ft
 
-        <label>Weight (lbs):
+                <input type="number" name="height_in" placeholder="in" min="0" max="11" value="<?= htmlspecialchars($data['height_in']) ?>"> in
 
-            <input type="number" name="weight" value="<?= htmlspecialchars($data['weight']) ?>">
+                <span style="color:red"><?= $errors['height_ft'] ?? '' ?> <?= $errors['height_in'] ?? '' ?></span>
 
-            <span style="color:red"><?= $errors['weight'] ?? '' ?></span>
+            </label>
+            
+            <br><br>
 
-        </label>
-        
-        <br><br>
+            <label>Weight (lbs):
 
-        <input class="sub-btn" type="submit" value="Submit">
+                <input type="number" name="weight" value="<?= htmlspecialchars($data['weight']) ?>">
 
-    </form>
+                <span style="color:red"><?= $errors['weight'] ?? '' ?></span>
+
+            </label>
+            
+            <br><br>
+
+            <input class="sub-btn" type="submit" value="Submit">
+
+        </form>
+
+    </div>
 
 </body>
 
