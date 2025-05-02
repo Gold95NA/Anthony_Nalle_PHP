@@ -31,14 +31,24 @@
 
         }
 
-        li {
+        table { 
 
-            padding: 1em;
+            width: 100%; 
 
-            display: flex;
+            border-collapse: collapse;
 
-            justify-content: center;
-            
+            margin-bottom: 1em; 
+
+        }
+
+        td, th { 
+
+            border: 1px solid #444; 
+
+            padding: 0.5em; 
+
+            text-align: left; 
+
         }
 
         a {
@@ -57,30 +67,36 @@
 
     <h1>Patient EHR</h1>
 
-    <ul>
+    <table>
 
-    <?php if (!empty($patients)): ?>
+        <tr>
 
-        <?php foreach ($patients as $patient): ?>
+            <th>First</th><th>Last</th><th>Birth Date</th><th>Married</th><th>Actions</th>
 
-            <li>
+        </tr>
 
-                <?= htmlspecialchars($patient['name']) ?> (<?= htmlspecialchars($patient['date_of_birth']) ?>)
+        <?php foreach ($patients as $p): ?>
 
-            </li>
+        <tr>
+
+            <td><?= htmlspecialchars($p['first_name']) ?></td>
+
+            <td><?= htmlspecialchars($p['last_name']) ?></td>
+
+            <td><?= htmlspecialchars($p['birth_date']) ?></td>
+
+            <td><?= $p['married'] ? 'Yes' : 'No' ?></td>
+
+            <td><a class="button" href="patient-details.php?id=<?= $p['id'] ?>">Edit</a></td>
+
+        </tr>
 
         <?php endforeach; ?>
 
-    <?php else: ?>
-
-        <li>No patients found.</li>
-
-    <?php endif; ?>
-
-    </ul>
+    </table>
 
     <a href="patient-details.php">Add Patient</a>
-
+    
 </body>
 
 </html>

@@ -2,6 +2,10 @@
 
 require 'patient-EHR.php';
 
+$isEdit = isset($_GET['id']);
+
+$patient = $isEdit ? getPatient($pdo, $_GET['id']) : ['first_name'=>'', 'last_name'=>'', 'birth_date'=>'', 'married'=>0, 'id'=>''];
+
 ?>
 
 <!DOCTYPE html>
@@ -40,24 +44,32 @@ require 'patient-EHR.php';
 
         }
 
-        input {
+        label { 
 
-            display: block;
+            display: block; 
 
-            margin: 0.5em 0;
-            
-            width: 300px;
+            margin: 0.5em 0 0.2em; 
 
         }
 
-        input[type="submit"] {
+        input[type="text"], input[type="date"] { 
 
-            margin-top: 1em;
+            width: 300px; 
 
-            display: flex;
+            padding: 0.5em; 
 
-            justify-content: center;
+        }
 
+        .actions { 
+            
+            margin-top: 1em; 
+        
+        }
+
+        .actions input { 
+            
+            margin-right: 1em; 
+        
         }
 
     </style>
@@ -66,33 +78,45 @@ require 'patient-EHR.php';
 
 <body>
 
-    <h1>Add Patient</h1>
+<h1><?= $isEdit ? 'Edit' : 'Add' ?> Patient</h1>
 
-    <form method="POST" action="patient-EHR.php">
+<form method="POST" action="patient-EHR.php">
 
-        <label>Name:</label>
+    <input type="hidden" name="id" value="<?= $patient['id'] ?>">
 
-        <input type="text" name="name" required>
+    <label>First Name:</label>
 
-        <label>Date of Birth:</label>
+    <input type="text" name="first_name" required value="<?= htmlspecialchars($patient['first_name']) ?>">
 
-        <input type="date" name="date_of_birth" required>
+    <label>Last Name:</label>
 
-        <label>Email:</label>
+    <input type="text" name="last_name" required value="<?= htmlspecialchars($patient['last_name']) ?>">
 
-        <input type="email" name="email">
+    <label>Birth Date:</label>
 
-        <label>Phone:</label>
+    <input type="date" name="birth_date" required value="<?= $patient['birth_date'] ?>">
 
-        <input type="text" name="phone">
+    <label><input type="checkbox" name="married" <?= $patient['married'] ? 'checked' : '' ?>> Married</label>
 
-        <input type="hidden" name="add_patient" value="1">
+    <div class="actions">
 
-        <input type="submit" value="Add Patient">
+        <?php if ($isEdit): ?>
 
-    </form>
+            <input type="submit" name="update_patient" value="Update">
 
-    <p><a href="patient-EHR.php">Cancel and go back</a></p>
+            <input type="submit" name="delete_patient" value="Delete" onclick="return confirm('Are you sure?');">
+
+        <?php else: ?>
+
+            <input type="submit" name="add_patient" value="Add">
+
+        <?php endif; ?>
+
+        <a href="patient-EHR.php">Cancel</a>
+
+    </div>
+
+</form>
 
 </body>
 

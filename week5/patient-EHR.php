@@ -6,7 +6,7 @@ $db   = 'patient_ehr';
 
 $user = 'root';
 
-$pass = ''; 
+$pass = '';
 
 try {
 
@@ -16,7 +16,7 @@ try {
 
 } catch (PDOException $e) {
 
-    die("Database connection failed: " . $e->getMessage());
+    die("Connection failed: " . $e->getMessage());
 
 }
 
@@ -28,35 +28,62 @@ function getAllPatients($pdo) {
 
 }
 
-function addPatient($pdo, $name, $dob, $email, $phone) {
+function getPatient($pdo, $id) {
 
-    $sql = "INSERT INTO patients (name, date_of_birth, email, phone) VALUES (?, ?, ?, ?)";
+    $stmt = $pdo->prepare("SELECT * FROM patients WHERE id = ?");
 
-    $stmt = $pdo->prepare($sql);
+    $stmt->execute([$id]);
 
-    $stmt->execute([$name, $dob, $email, $phone]);
+    return $stmt->fetch(PDO::FETCH_ASSOC);
 
 }
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_patient'])) {
+function addPatient($pdo, $first, $last, $dob, $married) {
 
-    $name  = $_POST['name'];
+    $stmt = $pdo->prepare("INSERT INTO patients (first_name, last_name, birth_date, married) VALUES (?, ?, ?, ?)");
 
-    $dob   = $_POST['date_of_birth'];
+    $stmt->execute([$first, $last, $dob, $married]);
 
-    $email = $_POST['email'];
+}
 
-    $phone = $_POST['phone'];
+function updatePatient($pdo, $id, $first, $last, $dob, $married) {
 
-    addPatient($pdo, $name, $dob, $email, $phone);
+    $stmt = $pdo->prepare("UPDATE patients SET first_name = ?, last_name = ?, birth_date = ?, married = ? WHERE id = ?");
+
+    $stmt->execute([$first, $last, $dob, $married, $id]);
+
+}
+
+function deletePatient($pdo, $id) {
+
+    $stmt = $pdo->prepare("DELETE FROM patients WHERE id = ?");
+
+    $stmt->execute([$id]);
+
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    if (isset($_POST['add_patient'])) {
+
+        addPatient($pdo, $_POST['first_name'], $_POST['last_name'], $_POST['birth_date'], isset($_POST['married']) ? 1 : 0);
+
+    } elseif (isset($_POST['update_patient'])) {
+
+        updatePatient($pdo, $_POST['id'], $_POST['first_name'], $_POST['last_name'], $_POST['birth_date'], isset($_POST['married']) ? 1 : 0);
+
+    } elseif (isset($_POST['delete_patient'])) {
+
+        deletePatient($pdo, $_POST['id']);
+
+    }
 
     header('Location: patient-EHR.php');
 
     exit();
 }
 
+
 $patients = getAllPatients($pdo);
 
 require 'patient-EHR.view.php';
-
-?>
