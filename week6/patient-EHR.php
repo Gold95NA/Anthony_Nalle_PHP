@@ -1,5 +1,7 @@
 <?php
 
+require 'auth.php';
+
 $host = 'localhost';
 
 $db   = 'patient_ehr';
