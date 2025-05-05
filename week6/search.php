@@ -72,10 +72,24 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         }
 
-        input, select { 
-            
-            margin-bottom: 0.5em; 
-        
+        .form-input {
+
+            display: flex;
+
+            justify-content: center;
+
+            padding-bottom: 1em;
+
+        }
+
+        form {
+
+            display: flex;
+
+            flex-direction: column;
+
+            width: 200px;
+
         }
 
         table { 
@@ -104,31 +118,35 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <h1>Search Patients</h1>
 
-<form method="GET">
+<div class="form-input">
 
-    <label>First Name:</label>
+    <form method="GET">
 
-    <input type="text" name="first_name" value="<?= htmlspecialchars($_GET['first_name'] ?? '') ?>"><br>
+        <label>First Name:</label>
 
-    <label>Last Name:</label>
+        <input type="text" name="first_name" value="<?= htmlspecialchars($_GET['first_name'] ?? '') ?>"><br>
 
-    <input type="text" name="last_name" value="<?= htmlspecialchars($_GET['last_name'] ?? '') ?>"><br>
+        <label>Last Name:</label>
 
-    <label>Married:</label>
+        <input type="text" name="last_name" value="<?= htmlspecialchars($_GET['last_name'] ?? '') ?>"><br>
 
-    <select name="married">
+        <label>Married:</label>
 
-        <option value="">--</option>
+        <select name="married">
 
-        <option value="1" <?= (($_GET['married'] ?? '') === '1') ? 'selected' : '' ?>>Yes</option>
+            <option value="">--</option>
 
-        <option value="0" <?= (($_GET['married'] ?? '') === '0') ? 'selected' : '' ?>>No</option>
+            <option value="1" <?= (($_GET['married'] ?? '') === '1') ? 'selected' : '' ?>>Yes</option>
 
-    </select><br>
+            <option value="0" <?= (($_GET['married'] ?? '') === '0') ? 'selected' : '' ?>>No</option>
 
-    <button type="submit">Search</button>
+        </select><br>
 
-</form>
+        <button type="submit">Search</button>
+
+    </form>
+
+</div>
 
 <table>
 
@@ -137,7 +155,7 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <?php foreach ($results as $p): ?>
 
 <tr>
-    
+
     <td><?= htmlspecialchars($p['first_name']) ?></td>
 
     <td><?= htmlspecialchars($p['last_name']) ?></td>
