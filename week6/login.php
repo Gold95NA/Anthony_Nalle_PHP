@@ -40,7 +40,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <title>Login</title>
 
-    <style>body { background:rgb(12, 12, 12); color: white; padding: 2em; }</style>
+    <style>
+        
+        body {
+
+            background:rgb(12, 12, 12);
+
+            padding: 2em;
+
+            text-align: left;
+
+            color: #ffffff;
+
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+
+        h1 {
+
+            display: flex;
+
+            justify-content: center;
+
+        }
+        
+        </style>
 
 </head>
 

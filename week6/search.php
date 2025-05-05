@@ -50,13 +50,51 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <style>
 
-        body { background: #0c0c0c; color: white; padding: 2em; }
+        body {
 
-        input, select { margin-bottom: 0.5em; }
+            background:rgb(12, 12, 12);
 
-        table { margin-top: 1em; border-collapse: collapse; width: 100%; }
+            padding: 2em;
 
-        td, th { border: 1px solid #666; padding: 0.5em; }
+            text-align: left;
+
+            color: #ffffff;
+
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+
+        h1 {
+
+            display: flex;
+
+            justify-content: center;
+
+        }
+
+        input, select { 
+            
+            margin-bottom: 0.5em; 
+        
+        }
+
+        table { 
+            
+            margin-top: 1em; 
+            
+            border-collapse: collapse; 
+            
+            width: 100%; 
+        
+        }
+
+        td, th { 
+            
+            border: 1px solid #666; 
+            
+            padding: 0.5em; 
+        
+        }
 
     </style>
 
